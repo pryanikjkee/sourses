@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div class="container-fluid p-4 la-catalog-works" id="mobile__no__gutters">
+    <div class="selected__works ">
+        <div class="container-fluid">
+            <div class="flex-row d-flex justify-content-center">
+                <div class="col-xl-6 text-center works__description__heading">
+                    <h5>SELECTED WORKS</h5>
+                    <p>creativity</p>
+                </div>
+            </div>
+            <div class="container container__full__resp" id="mobile__no__gutters">
+              {{ rows }}
+            </div>
+
+            <div class="flex-row d-flex justify-content-center align-items-center">
+                <div class="d-flex pt-5 pb-5 mb-5">
+                    <!-- <div onclick="" class="button__see__all hvr-sweep-to-right text-center ">
+                        SEE ALL
+                    </div> -->
+                      <a class="btn-6" href="/work-page">SEE ALL<span></span></a>
+                </div>
+                <script>
+                $(function() {  
+  $('.btn-6')
+    .on('mouseenter', function(e) {
+			var parentOffset = $(this).offset(),
+      		relX = e.pageX - parentOffset.left,
+      		relY = e.pageY - parentOffset.top;
+			$(this).find('span').css({top:relY, left:relX})
+    })
+    .on('mouseout', function(e) {
+			var parentOffset = $(this).offset(),
+      		relX = e.pageX - parentOffset.left,
+      		relY = e.pageY - parentOffset.top;
+    	$(this).find('span').css({top:relY, left:relX})
+    });
+//   $('.btn-6').click(function(){return false});
+});
+                
+                </script>
+                {{ pager }}
+                {{ more }}
+            </div>
+        </div>
+    </div>
+</div>

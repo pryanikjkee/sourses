@@ -1,0 +1,269 @@
+<div class=" loaderArea position-fixed d-flex justify-content-center align-items-center">
+    <div class="d-flex  loader " data-wow-iteration="20">
+
+        <img src="/img/preloader.gif" class="img-fluid" alt="">
+
+    </div>
+
+
+</div>
+
+<script>
+    new WOW().init();
+</script>
+<div id="header__wrapper" class="d-flex flex-column">
+
+
+
+
+
+    <header {% if file_url(node.field_banner_image.entity.uri.value)|length> 2 and node.field_banner_viedo.value is empty %} style="background-image: url('{{ file_url(node.field_banner_image.entity.uri.value)}}');"
+        {% endif %}>
+        <div class=" hasvideo {% if node.field_banner_viedo.value is empty %}
+       d-none
+{% endif %}">
+
+
+        </div>
+        <div class="container-fluid container__full">
+
+
+            <div class="row position-absolute w-100">
+
+
+
+
+                <!-- page navigation test test test-->
+
+                <div class="col-xl-12">
+                    <div class="separator separator__small"></div>
+                </div>
+                <div class="col-xl-10 tablet__relative d-flex offset-1 pl-0 justify-content-between ">
+                    <a class="block__work__link" href="/">
+
+                        <div class="g__a__logo">
+                            <h2 class="brand__name   g__letter d-inline-block ">G</h2>
+                            <span class="mb-2 dash d-inline-block"></span>
+                            <h2 class="brand__name  g__letter__a d-inline-block">A</h2>
+                        </div>
+                    </a>
+
+
+
+
+
+                    <div class="burger__fixed burger__menu">
+                        <span class="menu__button top_line"></span>
+                        <span class="menu__button center_line"></span>
+                        <span class="menu__button bottom_line"></span>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="wrapper__absolute">
+                <div class="row header__title__text">
+                    <div class="col-xl-6 pl-5 col-md-10 offset-xl-2 col-12 wow pulse text-center">
+                        <h1 class="header__title">{{ node.field_text_field_1.value }}</h1>
+                    </div>
+
+                </div>
+                <div class="row  pt-5 pb-5">
+                    <div class="col-xl-6 offset-xl-5 col-md-6 offset-md-5 col-sm-6 offset-sm-4 col-8 offset-3 line__block first__line__header">
+
+                        <div class="progress wow fadeIn rounded-0" value="0">
+                            <div class="progress-bar rounded-0 animate__on__load" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row connected__wrapper">
+                    <div class="col-xl-9 offset-lg-0 col-md-10 offset-md-1 connected__text wow pulse  pb-3 pr-0">
+                        <h1 class="header__title">{{ node.field_2.value }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 offset-xl-5 col-md-6 offset-md-5 col-sm-6 offset-sm-4 col-8 offset-3 black_white_line postion-absolute line__block">
+                        <!-- <div class="line__rotate__contr ">
+
+                        </div> -->
+                        <div class="progress rounded-0" id="progress" value="0">
+                            <div class="progress-bar rounded-0 pr__mobile" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="50"></div>
+                            <div class="progress-bar rounded-0" id="progress-bar__black" role="progressbar" aria-valuenow="0" aria-valuemin="50" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+</div>
+<div id="main__wrapper">
+    <div class="container-fluid brand__description d-flex align-items-center  m-0 ">
+
+        <div class="col-10 offset-1 text-center ga__description ">
+            {{ node.field_text_home.value|raw }}
+
+
+        </div>
+        <div class="col-10 offset-1 after__desc__block">
+            <div class="progress" id="progress__third" value="0">
+                <div class="progress-bar pr__third__mobile" id="progress-bar__third" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+            </div>
+        </div>
+
+    </div>
+
+    {{ view_home_works }}
+</div>
+<div id="passion__wrapper">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-12 mt-5 passion__heading ">
+                <h1 class="passion__title">passion</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mobile__line">
+            <div class="col-xl-5 offset-lg-1 offset-xl-0 col-md-4 offset-md-1 pr-0 col-sm-5 mt-5  passion__description">
+                <h5> A creative agency </br> that builds brands.</h5>
+                <a href="/about" class="desktop_about link__more mt-4 ">
+                    <p class="m-0 p-0 view__more float-left">ABOUT US
+
+                    </p>
+                    <span class="line__arrow position-relative "></span>
+                </a>
+            </div>
+            <div class="col-2 line__index ">
+                <div class="progress " id="progress__floor">
+                    <div class="progress-bar" id="progress-bar__floor"></div>
+                </div>
+                <!-- <div class="progress" id="progress__floor" value ="0">
+                                <div class="progress-bar" id="progress-bar__floor" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> -->
+
+
+
+
+
+            </div>
+            <div class="col-xl-5 col-md-5 col-sm-5 pl-0 text-left passion__description">
+                {{ node.field_passion_text.value|raw }}
+                <a href="/about" class=" mobile_about link__more mt-4 ">
+                    <p class="m-0 p-0 view__more float-left">ABOUT US
+
+                    </p>
+                    <span class="line__arrow position-relative "></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mobile__line no-gutters">
+            <div class="col-12 mt-2 passion__heading text-center">
+                <h1 class="passion__title ps_head_mobile">purpose</h1>
+            </div>
+        </div>
+        <div class="row progress_line_footer_mobile">
+            <div class="col-xl-12 col-md-12">
+                <!-- <div class="purpose__vertical__line"></div>
+                     -->
+                <div class="progress " id="progress__floor__second">
+                    <div class="progress-bar" id="progress-bar__floor__second"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="footer__graphic__aliance">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 home__left order-2 col-sm-5 col-md-5 order-md-1 border__footer  text__footer">
+                <p class="email__and_phone">
+                    <a class="mail__dec__none" href="mailto:hello@graphicalliance.co.uk">hello@graphicalliance.co.uk</a>
+
+                </p>
+                <p class="email__and_phone">
+                    <a href="tel:+4402073955770">
+                        +44(0)20 &nbsp;7395&nbsp;5770
+                    </a>
+
+                </p>
+                <h4>OUR OFFICE</h4>
+                <p>1 Rosoman Place </br>
+                    London,EC1R0JY</br>
+                    United Kingdom
+                </p>
+                <h4 class="mt-5">ELSEWHERE</h4>
+                <div class="social__links">
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-2 order-md-2 col-sm-2 third__floor__line">
+                <!-- <div class="footer__vertical__line"></div> -->
+                <div class="progress " id="progress__floor__third">
+                    <div class="progress-bar" id="progress-bar__floor__third"></div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-md-5 col-sm-5 order-md-3 home__right right__column__center right__column__center text-left order-1">
+                <h5 class="mb-5">We're always looking </br>for new talent</h5>
+                <p class="mb-0">Join us and help create unique digital experiences. Send your CV at</p>
+                <p class="email__job mb-0">
+                    <a class="mail__dec__none" href="mailto:jobs@graphicalliance.co.uk">jobs@graphicalliance.co.uk</a>
+                </p>
+                <p>We look forward to hearing from you.</p>
+            </div>
+            <div class="col-12 footer__align order-md-4 mt-5">
+                <h1 class="footer__title">graphic alliance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<script>
+    HomeLines();
+</script>
+<script>
+    $(function () {
+        if (screen.width >= 612) {
+            $(".hasvideo").html(
+                '<div class="embed-responsive embed-responsive-16by9"><video autoplay muted preload="yes" poster="img/header__bg.png" id="bgvid" loop class="embed-responsive-item" src="{{ node.field_banner_viedo.value }}"></video></div>'
+            );
+        }
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('.la-catalog-works .row-item-1').addClass('open');
+        $('.la-work-page .la-catalog-works .row-item-2').addClass('open');
+
+        $('.button__see__all').click(function () {
+            $('.button__see__all').css({
+                color: "white"
+            });
+            window.location = "/work-page";
+        });
+    });
+</script>

@@ -1,0 +1,217 @@
+ <div class=" loaderArea position-fixed d-flex justify-content-center align-items-center">
+    <div class="d-flex  loader " data-wow-iteration="20">
+
+        <img src="/img/preloader.gif" class="img-fluid" alt="">
+
+    </div>
+
+
+</div>
+ 
+ <div id="about__header__wrapper">
+        
+
+        <header id="about__bg">
+            <!-- фон about us пока как на главной тк еще не открыли скетч -->
+            <div class="container-fluid">
+                 
+                <div class="row">
+
+
+
+
+                    <!-- page navigation -->
+
+                    <div class="col-lg-12">
+                        <div class="separator separator__small"></div>
+                    </div>
+                    <div class="col-lg-10 tablet__relative d-flex offset-1 pl-0 justify-content-between ">
+                        <a class="block__work__link" href="/">
+                        
+<div class="g__a__logo">
+                            <h2 class="brand__name   g__letter d-inline-block ">G</h2>
+                            <span class="mb-2 dash d-inline-block"></span>
+                            <h2 class="brand__name  g__letter__a d-inline-block">A</h2>
+                        </div>
+                    </a>
+                     
+
+
+
+                      
+                    <div class="burger__fixed burger__menu">
+                            <span class="menu__button top_line"></span>
+                            <span class="menu__button center_line"></span>
+                            <span class="menu__button bottom_line"></span>
+                    </div>
+                         
+                       
+                    </div>
+
+
+                </div>
+                <div class="row header__title__text__about">
+                    <div class="col-lg-12 offset-lg-0 col-md-6 offset-md-3 about__title__center text-center">
+                        <h1 class="about__title">{{ node.field_header.value }}</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div id="about__wrapper">
+        <div class="container-fluid p-4 " id="mobile__no__gutters">
+            <div class="row no-gutters about__background ">
+                <div class="col-lg-11 col-12 pl-4 offset-lg-1 pt-5">
+                    <h1 class="custom__color__red">{{ node.field_text_red.value }}</h1>
+                    <h1 class="mt-3 custom__color__green">{{ node.field_text_green.value }}</h1>
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-4 offset-lg-1 p-0 col-md-5 col-sm-5 about__description text-left">
+                            {{ node.field_text_left.value|raw }}
+                        </div>
+                        <div class="col-lg-2 about__mobile__line col-md-2 col-sm-2 text-center p-0 ">
+                            {# <div class="about__center__line"></div> #}
+                            <div class="progress " id="progress__floor__about">
+                                            <div class="progress-bar" id="progress-bar__about"></div>
+                                        </div>
+                        </div>
+                        <div class="col-lg-4 p-0 col-md-5 col-sm-5 about__right__mobile">
+                            <p class="about__right__block">     {{ node.field_text_right.value|striptags }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid pt-4 p-0">
+                <div class="row" id="mobile__no__gutters">
+                    <div class="col-12" id="mobile__no__gutters">
+                        <img src="{{ file_url(node.field_about_image.entity.uri.value)}}" class="img-fluid w-100" alt="{{node.field_about_image.alt}}">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4  ga__clients__bg ">
+                
+                <div class="row  text-center  " id="mobile__no__gutters">
+                        
+                    {% for image in node.field_clients %}
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-5">
+                        <img src="{{file_url(image.entity.uri.value)}}" class="img-fluid" alt="{{image.alt}}">
+                    </div>
+                {% endfor %}
+                    
+                  
+
+                </div>
+        
+            </div>
+            <div class="container-fluid">
+                <div class="row mt-4 about__background">
+                    <div class="col-lg-12 quote__img text-center">
+                        <img src="./img/quote.png" class="img-fluid" alt="">
+                    </div>
+                    <!-- quotes carousel -->
+                    <div class="col-lg-12 p-4 text-center">
+                        <div id="testimonials__carousel" class="carousel slide" data-ride="carousel">
+                            <!-- <ol class="carousel-indicators testimonials__indicator">
+                                    <li data-target="#testimonials__carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#testimonials__carousel" data-slide-to="1"></li>
+                                    <li data-target="#testimonials__carousel" data-slide-to="2"></li>
+                                </ol> -->
+                            <div class="carousel-inner">
+                                <div class="col-3 position-absolute w-100 right__hover"></div>
+                                <div class="col-3 position-absolute w-100 left__hover"></div>
+                                
+                                {% for  testimonials in node.field_testimonials %}
+                                
+                               <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                    <div class="col-lg-6 offset-lg-3">
+                                       {{testimonials.value|raw}}
+                                    </div>
+                                </div>
+                                    {% endfor %}
+                                
+                                
+                                <div class="col-lg-12 next__carousel__block ">
+                                    <a class="carousel-control-next " id="next__testimonials" href="#testimonials__carousel" role="button" data-slide="next">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                    </a>
+                                      <a class="carousel-control-next" id="prev__testimonials" href="#testimonials__carousel" role="button" data-slide="prev">
+                                        <i class="fas fa-long-arrow-alt-left"></i>
+                                    </a>
+                                </div>
+                                <div class="col-12 ">
+                                    <ol id="testimonials__indicator" class=" carousel-indicators pl-0">
+                                        <li data-target="#testimonials__carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#testimonials__carousel" data-slide-to="1"></li>
+                                        <li data-target="#testimonials__carousel" data-slide-to="2"></li>
+                                    </ol>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="passion__wrapper">
+
+     <div id="footer__graphic__aliance" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 pt-4 touch__mobile text-center">
+                <h1 class="footer__title">get in touch</h1>
+            </div>
+            <div class="col-lg-5 col-12 order-lg-1 col-sm-5 order-sm-1 col-md-5 order-md-1  order-3 contact__footer__em__block   ">
+                <p class="email__and_phone">
+                        <a class="mail__dec__none" href="mailto:hello@graphicalliance.co.uk">hello@graphicalliance.co.uk</a>
+                </p>
+                <p class="email__and_phone">
+                        <a href="tel:+4402073955770">
+                                +44(0)20 &nbsp;7395&nbsp;5770
+                            </a>
+        
+                </p>
+                <h4>OUR OFFICE</h4>
+                <p>1 Rosoman Place </br>
+                    London,EC1R0JY</br>
+                    United Kingdom
+                </p>
+                <h4>ELSEWHERE</h4>
+                <div class="social__links">
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-0 order-2 col-md-2 col-sm-2 order-sm-2 order-md-2 order-lg-2">
+                <div class="footer__vertical__line"></div>
+            </div>
+            <div class="col-lg-5 col-12 order-lg-3 col-md-5 order-md-3 col-sm-5 order-sm-3 order-1 right__column__center">
+                <h5 class="mb-5">We're always looking </br>for new talent</h5>
+                <p class="mb-0">Join us and help create unique digital experiences. Send your CV at</p>
+                <p class="email__job mb-0">  <a class="mail__dec__none" href="mailto:jobs@graphicalliance.co.uk">jobs@graphicalliance.co.uk</a></p>
+                <p>We look forward to hearing from you.</p>
+            </div>
+            <div class="col-12 text-center footer__title__block order-lg-4 order-sm-4 order-md-4 touch__mobile">
+                <h1 class="footer__title">graphic alliance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    <script>AboutLine();</script>

@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set i = 0 %}
+{% set j = 1 %}
+{% for row in rows %}
+  {% set i = i + 1 %}
+
+  {% if i == 1 %}
+  	<div class="flex-row-reverse row-item row-item-{{ j }}">
+      
+  		<div class="col-xl-6 image__block__glass">
+        {{ row.content }}
+      </div>
+  {% endif %}
+
+  {% if i == 2 %}
+      <div class="col-xl-6 image__block__finn">
+        {{ row.content }}
+      </div>
+  {% endif %}
+
+  {% if i == 3 %}
+      <div class="col-xl-6 image__block__bigme">
+        {{ row.content }}
+      </div>
+  {% endif %}
+
+  {% if i == 4 %}
+      <div class="col-xl-6 image__block__facegym">
+        {{ row.content }}
+      </div>
+    </div>
+    {% set i = 0 %}
+    {% set j = j + 1 %}
+  {% endif %}
+{% endfor %}
+
+{% if i != 4 %}
+  </div>
+{% endif %}

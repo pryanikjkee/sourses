@@ -1,0 +1,13 @@
+@media (max-width: 800px) and (min-width:200px) 
+{
+    .admin-sidebar{
+        clip-path: none;
+    }
+    .admin-panel__content{
+        clip-path: none;
+        padding-left: 0!important;
+        transform: none;
+    }
+    
+    
+ }

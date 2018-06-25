@@ -1,0 +1,228 @@
+<div class=" loaderArea position-fixed d-flex justify-content-center align-items-center">
+    <div class="d-flex  loader " data-wow-iteration="20">
+
+        <img src="/img/preloader.gif" class="img-fluid" alt="">
+
+    </div>
+
+
+</div>
+
+<!-- higher is the preloader -->
+<div id="finn__header" style="background-image: url('{{ file_url(node.field_top_banner_image.entity.uri.value)}}');">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div class="separator separator__small "></div>
+            </div>
+            <div class="col-lg-10 tablet__relative d-flex offset-1 pl-0 justify-content-between  {% if node.  field_magamenu_color.value == 1 %} black__menu {% endif %}">
+              
+                <a class="block__work__link" href="/">
+                <div class="g__a__logo{% if node.  field_magamenu_color.value == 1 %}__black {% endif %} ">
+                    <h2 class="brand__name   g__letter d-inline-block ">G</h2>
+                            <span class="mb-2 dash d-inline-block"></span>
+                            <h2 class="brand__name  g__letter__a d-inline-block">A</h2>
+                </div></a>
+                <div class="burger__fixed burger__menu">
+                    <span class="menu__button top_line"></span>
+                    <span class="menu__button center_line"></span>
+                    <span class="menu__button bottom_line"></span>
+                </div>
+            </div>
+            <div class="col-xl-2 text-right separator__mobile">
+
+            </div>
+            <div class="separator mt-5 separator__small"></div>
+            <div class="separator separator__small"></div>
+        </div>
+        <div class="col-xl-4 offset-xl-1 pl-0 col-md-8 offset-md-2 article__works__block">
+            <h1 class="white__title m-0" style="color: {{ node.field_color_client_name.color }}">{{ node.field_client_name.value }}</h1>
+            <h2 class="works__header__title" style="color: {{ node.field_solor_a_second_title.color }}">{{ node.field_a_secondary_title.value }}</h2>
+        </div>
+<div class="container">
+
+        <div class="col-xl-2 offset-xl-2 col-2 offset-3 pl-0 line__block">
+                <div class="works__vertical__line finn__absolute  ">
+    
+                </div>
+</div>
+      
+        </div>
+    </div>
+
+</div>
+
+<div id="problem__description__wrapper">
+    <div class="col-12" id="navbar__sticky">
+            <div id="navbar_wrap">
+                <nav class="navbar navbar-expand-md justify-content-center navbar-dark">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item ">
+                            <a id="after__link" class="nav-link nav__preorder__style" href="#problem__wrapper"> the problem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mobile__showcase">mobile </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#works__slider">illustrations</a>
+                        </li>
+                        {# <li class="nav-item">
+                            <a class="nav-link" href="#work__thin__descripion">website</a>
+                        </li> #}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#results">results</a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </div>
+
+        </div>
+        {#  #}
+    <div class="row mt-4  works__background mr-4 ml-4 " id="mobile__no__gutters">
+        <div class="container problem__description" id="problem__wrapper">
+            <div class="row">
+                <div class="col-xl-6 ">
+                    <h1 class="works__header__title mb-5 wow1 lineWrap">the problem</h1>
+                    <p class="wow fadeIn">{{ node.field_the_problem.value|raw }}</p>
+                </div>
+                <div class="col-xl-5 offset-xl-1 text-left links__and__proto ">
+                <div class="row">
+                    <div class="col-xl-12 col-md-6 d-inline-block">
+                        <h6 class="work__category text-uppercase">services</h6>
+
+                        {% for key, service in node.field_taxonomy_services %}
+                        <h3 class="work__subcategory various-color-1 wow1 lineWrap text-lowercase">
+                            <span style="color: 
+                             {{ node.field_color[key].value }}">{{ service.entity.label}}</span>
+                        </h3>
+                        {% endfor %}
+                    </div>
+                    <div class="col-xl-12 col-md-5 tablet__cat d-inline-block">
+                        <h6 class="work__category  text-uppercase wow1 lineWrap ">sector</h6>
+                        {% for key, sector in node.field_taxonomy_sector %}
+                        <h3 class="work__subcategory various-color-1 wow1 lineWrap text-lowercase">
+                            <span style="color: 
+                             {{ node.field_color_of_sector_[key].value }}">{{ sector.entity.label}}</span>
+                        </h3>
+                        {% endfor %}
+                        <h6 class="work__category  text-uppercase wow1 lineWrap ">live site</h6>
+
+                        {% for key, link in node.field_live_site %}
+                        <a href="{{link.uri}}" class="works__site__link wow1 lineWrap ">
+                            <span style="color: 
+                             {{ node.field_colors_of_links[key].value }}">{{link.title}}
+                                <i class="fas fa-external-link-alt works__site__link-icon"></i>
+                            </span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{ view_paragrafs }}
+
+{{ view_releated_works }}
+
+<div id="footer__graphic__aliance">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 pt-4 touch__mobile text-center">
+                <h1 class="footer__title">get in touch</h1>
+            </div>
+            <div class="col-xl-5 col-12 col-md-5 col-sm-5 order-sm-1 order-md-1 order-lg-1 order-3 contact__footer__em__block   ">
+                <p class="email__and_phone">
+                        <a class="mail__dec__none" href="mailto:hello@graphicalliance.co.uk">hello@graphicalliance.co.uk</a>
+                </p>
+                <p class="email__and_phone">
+                        <a href="tel:+4402073955770">
+                                +44(0)20 &nbsp;7395&nbsp;5770
+                            </a>
+                </p>
+                <h4>OUR OFFICE</h4>
+                <p>1 Rosoman Place </br>
+                    London,EC1R0JY</br>
+                    United Kingdom
+                </p>
+                <h4>ELSEWHERE</h4>
+                <div class="social__links">
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-0 order-2 col-md-2 col-sm-2 order-sm-2 order-md-2 order-lg-2">
+                <div class="footer__vertical__line"></div>
+            </div>
+            <div class="col-xl-5 col-12 col-sm-5 order-sm-3 col-md-5 order-lg-3 order-md-3 order-1 right__column__center">
+                <h5 class="mb-5">We're always looking </br>for new talent</h5>
+                <p class="mb-0">Join us and help create unique digital experiences.Send your CV at</p>
+                <p class="email__job mb-0"> <a class="mail__dec__none" href="mailto:jobs@graphicalliance.co.uk">jobs@graphicalliance.co.uk</a></p>
+                <p>We look forward to hearing from you</p>
+            </div>
+            <div class="col-12 text-center footer__title__block order-sm-4 order-md-4 order-lg-4 touch__mobile mt-5">
+                <h1 class="footer__title">graphic alliance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    new WOW().init();
+</script>
+<script>
+    // new WOW().init();
+    wow1 = new WOW({
+        boxClass: 'wow1', // default
+        animateClass: 'animz', // default
+        offset: 0, // default
+        mobile: true, // default
+        live: true // default
+    })
+    wow1.init();
+</script>
+<script>
+    WorkPageLine();
+</script>
+
+    <script>
+        window.onscroll = function () {
+            showNavbar()
+        };
+        var navbar = document.getElementById("navbar__sticky");
+        var sticky = navbar.offsetTop;
+
+        function showNavbar() {
+            if (window.pageYOffset >= 1200) {
+                navbar.classList.add("sticky")
+               
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+<script src="themes/light/js/animations.js"></script>

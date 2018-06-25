@@ -1,0 +1,177 @@
+.menu
+{
+    /* display: none; */
+    opacity: 0;
+    z-index: 799;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(254, 146, 136, 0.95);
+    background-size: cover; 
+   
+}
+
+.menu-list
+{
+    height: 250px;
+    margin-top: 45vh;
+    border-left: 9px solid white;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 35px;
+}
+.line
+{
+    
+    display: inline-block;
+  margin-bottom: 10px;
+    background:  #323333;
+    height: 7px;
+    width: 0px;
+     transition: 0.1s;
+}
+.burger__fixed
+{
+    width: 66px;
+    right: 10%;
+    height: 66px;
+}
+.fixed:hover{
+    transform: none!important;
+}
+.top_line
+{
+     transition: 0.4s;
+    top: 0px;
+    /* left: 0px; */
+}
+.center_line
+{
+     transition: 0.4s;
+    top: 10px;
+    /* left: 0px; */
+}
+.bottom_line
+{
+     transition: 0.4s;
+    top: 20px;
+    /* left: 0px; */
+}
+.menu__button 
+{
+    transition: 0.2s;
+    transform: rotate(0deg);
+    position: absolute;
+}
+
+.burger__menu:hover{
+    margin-top: 0;
+    transition: 0.3s;
+    transform: translate(-10px,0px);
+}
+.burger_top
+{
+       
+    transform: rotate(-30deg);
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+.burger_center
+{
+     transition: 0.2s;
+    transform: rotate(63deg);
+    position: absolute;
+    top: 20px;
+    left: -6px;
+}
+.burger_bottom
+{
+     transition: 0.2s;
+    transform: rotate(21deg);
+    position: absolute;
+    top: 42px;
+    left: -16px;
+}
+.menu-list a
+{
+    color: white;
+    font-family: "Circular Std bold";
+    text-decoration: none;
+    font-size: 53.5px;
+color: #FAF9F0;
+letter-spacing: 0;
+line-height: 57px;
+
+}
+.menu-list li:hover a
+{
+    color:  #323333;
+    text-decoration: none;
+}
+.menu-list li:hover .line
+{
+     transition: 0.2s;
+    margin: 10px;
+    width: 50px;
+    z-index: 999;
+}
+.menu-list li
+{
+   
+    list-style: none;
+    color: white;
+    font-size: 55px;
+    font-family: "Circular Std";
+    margin-top: -30px;
+    margin-left: -10px;
+    cursor: pointer;
+    transition: 0.1s;
+    width: 400px;
+}
+.menu-list li:hover
+{
+    transition: 0.1s;
+    color: black;
+}
+.fixed
+{
+    position: fixed ;
+    z-index: 9999;
+}
+.burger__menu
+{
+    transition: 0.3s;
+ cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .menu-list {
+      height: 250px;
+      margin-top: 30vh;
+      border-left: 9px solid white;
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 35px;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .menu-list {
+       height: 287px;
+    border-left: 7px solid white;
+    padding-top: 19px;
+    }
+  .menu-list li{
+      font-size: 56px;
+      font-family: "Korpus c";
+      margin-top: -18px;
+  }
+ 
+}
+
+
+

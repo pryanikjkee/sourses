@@ -1,0 +1,19 @@
+<div id="results">
+    <div class="container-fluid mt-4" id="mobile__no__gutters">
+        <div class="row ml-2 results__bg mr-2" id="mobile__no__gutters" style="background-color:{{ paragraph.field_background_result.color }};">
+            <div class="container">
+                <div class="flex-xl-row flex-lg-column d-flex flex-md-column flex-column align-items-xl-center">
+                    <div class="col-xl-5 offset-xl-1 show__work__description ">
+                        <h2>The results</h2>
+                        <div class="result__description">
+                            <p>{{ paragraph.field_text_result.value|raw }}</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12 ">
+                        <img src="{{ file_url(paragraph.field_image_result.entity.uri.value) }}" alt="" class="work__image img-fluid rounded-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Helvetica bold";
+    src: url("/sites/all/themes/custom/tcg/fonts/HelveticaNeue-Bold.woff") format('woff');
+    font-style: normal;
+   font-weight: bold;
+}
+@font-face {
+    font-family: "Grotzecbold";
+    src: url("/sites/all/themes/custom/tcg/fonts/GrotzecHeadCondensed-Bold.woff") format('woff');
+   
+  
+}
+@font-face{
+    font-family:  "Helvetica medium";
+    src: url("/sites/all/themes/custom/tcg/fonts/HelveticaNeue-Medium.woff") format('woff');
+    font-style: normal;
+}
+@font-face{
+    font-family:  "Helvetica light";
+    src: url("/sites/all/themes/custom/tcg/fonts/HelveticaNeue-Light.woff") format('woff');
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face{
+    font-family:  "Grotzek" ;
+    src: url("/sites/all/themes/custom/tcg/fonts/Grotezk.woff2") format('woff2');
+    font-style: normal;
+}
+@font-face{
+    font-family:  "Helvetica";
+    src: url("/sites/all/themes/custom/tcg/fonts/Helvetica Neue.woff") format('woff');
+    font-style: normal;
+}

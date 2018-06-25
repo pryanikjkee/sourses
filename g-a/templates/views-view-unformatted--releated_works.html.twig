@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div id="releated__works">
+    <div class="container-fluid p-4 " id="mobile__no__gutters">
+        <div class="selected__works mt-2">
+            <div class="flex-row d-flex justify-content-center">
+                <div class="col-xl-6 text-center works__description__heading">
+                    <h5>RELEATED WORKS</h5>
+                    <p>creativity</p>
+                </div>
+            </div>
+            <div class="container container__full__resp">
+                    <div class="flex-row-reverse row" id="mobile__no__gutters">
+                            {% set i = 0 %}
+                            {% for row in rows %}
+                                {% set i = i + 1 %}
+            
+                                {% if i == 1 %}
+                                    <div class="col-xl-6 mt-5 image__block__glass">
+                                        <div class="test__js">
+                                            {{ row.content }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+            
+                                {% if i == 2 %}
+                                    <div class="col-xl-6 mt-5 col-md-12  image__block__finn">
+                                        {{ row.content }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+

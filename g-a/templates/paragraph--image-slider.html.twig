@@ -1,0 +1,40 @@
+<div id="works__slider">
+    <div class="container-fluid mt-4" id="mobile__no__gutters">
+        <div class="row ml-2 mr-2">
+            <div class="col-xl-12 p-0">
+                <div id="testimonials__carousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner ">
+                       
+                   
+                                 {% for key, image in paragraph.field_an_image_slider %}
+                                   <div class="carousel-item {% if key == 0 %} active {% endif %} ">
+                                    <img src="{{ file_url(image.entity.uri.value) }}" alt="">
+                                </div>
+                                  
+                                   {% endfor %}
+                        <div class="col-12  position-absolute">
+                            <a class="carousel-control-next " id="next__work__carousel" href="#testimonials__carousel" role="button" data-slide="next">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                             <a class="carousel-control-next " id="prev__work__carousel" href="#testimonials__carousel" role="button" data-slide="prev">
+                                <i class="fas fa-long-arrow-alt-left"></i>
+                            </a>
+                        </div>
+                        <div class="col-12 ">
+                            <ol id="next__work__carousel__indicator" class=" carousel-indicators  pl-0">
+                                <li data-target="#testimonials__carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#testimonials__carousel" data-slide-to="1"></li>
+                                <li data-target="#testimonials__carousel" data-slide-to="2"></li>
+                                   <li data-target="#testimonials__carousel" data-slide-to="3"></li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
